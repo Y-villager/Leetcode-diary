@@ -7,4 +7,7 @@ package code;
  * @date: 2022年07月21日 1:51
  */
 public class 两束相加 {
+    public static void main(String[] args) {
+
+    }
 }
