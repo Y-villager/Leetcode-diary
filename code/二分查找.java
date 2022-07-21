@@ -14,6 +14,12 @@ public class 二分查找 {
         System.out.println(res);
     }
 
+    /**
+     * 二分查找 数组下标，先取中间值（前提：有序数组；数组元素不重复）
+     * 目标值 == 中间值，取此时中间值下标
+     * 目标值 > 中间值，则说明目标在中间值右边
+     * 目标值 < 中间值，则说明目标在中间值左边
+     */
     public static int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
