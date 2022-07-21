@@ -8,3 +8,4 @@
 # 文件夹 #
 node_modules
 dist
+out
