@@ -1,6 +1,8 @@
 package code;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 功能描述
@@ -61,11 +63,12 @@ public class 两数相加 {
         System.out.println(listnode2);
 
         System.out.println(addTwoNumbers(listnode1, listnode2));
+
     }
 
     // 添加节点方法二
     // 数组正序添加节点，通过new新建next属性的方式添加节点
-    private static ListNode addNode2(int[] nums) {
+    public static ListNode addNode2(int[] nums) {
         // 返回结果
         ListNode node = null;
         // 定义一个可移动的指针
@@ -121,15 +124,23 @@ class ListNode {
 
     @Override
     public String toString() {
-        ListNode pre = next;
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(val);
-        while (pre != null){
-            list.add(pre.val);
-            pre = pre.next;
-        }
-
-        return list.toString();
+        return "ListNode{" +
+                "val=" + val +
+                ", next=" + next +
+                '}';
     }
+
+//    @Override
+//    public String toString() {
+//        ListNode pre = next;
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(val);
+//        while (pre != null){
+//            list.add(pre.val);
+//            pre = pre.next;
+//        }
+//
+//        return list.toString();
+//    }
 }
 
