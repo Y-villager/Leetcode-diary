@@ -9,6 +9,44 @@ import java.util.ArrayList;
  * @date: 2022年07月21日 1:51
  */
 public class 两数相加 {
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 返回结果
+        ListNode node = null;
+        // 定义一个可移动的指针
+        ListNode pre = null;
+        // 是否进位，因为最多只能进1，所以值只能是 0 或 1
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.val : 0;
+            int n2 = l2 != null ? l2.val : 0;
+            int sum = n1 + n2 + carry;
+            carry = sum / 10;
+            if (sum >= 10){
+                sum -= 10;
+            }
+            // 保存结果
+            if (node == null) {
+                node = pre = new ListNode(sum);
+            } else {
+                pre.next = new ListNode(sum);
+                pre = pre.next;
+            }
+            // 循环条件
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+            // 最后的相加如果有进位，而没有
+            if ((l1 == null || l2 == null) && carry == 1) {
+                pre.next = new ListNode(carry);
+            }
+        }
+        return node;
+    }
+
     public static void main(String[] args) {
         int[] node1 = {9,9,9,9,9,9,9};
         int[] node2 = {9, 9,9,9};
@@ -62,42 +100,7 @@ public class 两数相加 {
         return node;
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        // 返回结果
-        ListNode node = null;
-        // 定义一个可移动的指针
-        ListNode pre = null;
-        // 是否进位，因为最多只能进1，所以值只能是 0 或 1
-        int carry = 0;
-        while (l1 != null || l2 != null) {
-            int n1 = l1 != null ? l1.val : 0;
-            int n2 = l2 != null ? l2.val : 0;
-            int sum = n1 + n2 + carry;
-            carry = sum / 10;
-            if (sum >= 10){
-                sum -= 10;
-            }
-            // 保存结果
-            if (node == null) {
-                node = pre = new ListNode(sum);
-            } else {
-                pre.next = new ListNode(sum);
-                pre = pre.next;
-            }
-            // 循环条件
-            if (l1 != null) {
-                l1 = l1.next;
-            }
-            if (l2 != null) {
-                l2 = l2.next;
-            }
-            // 最后的相加如果有进位，而没有
-            if ((l1 == null || l2 == null) && carry == 1) {
-                pre.next = new ListNode(carry);
-            }
-        }
-        return node;
-    }
+
 }
 
 class ListNode {
