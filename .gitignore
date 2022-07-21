@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# 文件夹 #
+node_modules
+dist
