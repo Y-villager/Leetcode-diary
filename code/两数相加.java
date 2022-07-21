@@ -25,10 +25,8 @@ public class 两数相加 {
         System.out.println(addTwoNumbers(listnode1, listnode2));
     }
 
-    /**
-     * 添加节点方法二
-     * 数组正序添加节点，通过new新建next属性的方式添加节点
-     */
+    // 添加节点方法二
+    // 数组正序添加节点，通过new新建next属性的方式添加节点
     private static ListNode addNode2(int[] nums) {
         // 返回结果
         ListNode node = null;
@@ -47,10 +45,8 @@ public class 两数相加 {
         return node;
     }
 
-    /**
-     * 添加节点方法一
-     * 数组从后往前添加节点
-     */
+    // 添加节点方法一
+    // 数组从后往前添加节点
     public static ListNode addNode1(int[] nums) {
         ListNode next = new ListNode();
         ListNode node = null;
