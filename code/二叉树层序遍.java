@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static code.两数相加.addNode2;
 
 /**
  * 给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。
@@ -13,7 +12,7 @@ import static code.两数相加.addNode2;
  * @author: yxz
  * @date: 2022年07月21日 16:00
  */
-public class 二叉树层序遍历 {
+public class 二叉树层序遍 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         // 返回值
         List<List<Integer>> res = new ArrayList<List<Integer>>();
