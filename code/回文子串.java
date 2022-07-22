@@ -31,6 +31,14 @@ public class 回文子串 {
         }
         System.out.println("\n");
     }
+    public static void printDP(int[][] dp){
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[i].length; j++) {
+                System.out.print(dp[i][j]+"\t");
+            }
+            System.out.println("\n");
+        }
+    }
 
     public static void printDP(boolean[][] dp){
         for (int i = 0; i < dp.length; i++) {
