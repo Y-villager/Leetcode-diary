@@ -11,23 +11,45 @@ public class 素数个数统计 {
     public static void main(String[] args) {
 
     }
-    // 1.暴力算法
-    public static int bf(int n){
-        int count=0;
+
+    /**
+     * 1.暴力算法
+     *
+     * @param n
+     * @return
+     */
+    public static int bf(int n) {
+        int count = 0;
         for (int i = 2; i < n; i++) {
             count += isPrime(i) ? 1 : 0;
         }
         return count;
     }
+
     // 判断 2~x-1 之间有没有素数
     // 只选判断到 根号x 即可得出是不是素数
     private static boolean isPrime(int x) {
         for (int i = 2; i * i < x; i++) {
-            if (x % 2 == 0){
+            if (x % 2 == 0) {
                 return false;
             }
         }
         return true;
+    }
+
+
+    public static int eratosthenes(int n) {
+        boolean[] isPrime = new boolean[n];
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (!isPrime[i]) {
+                count++;
+                for (int j = i * i; j < n; j += i) {
+                    isPrime[j] = true;
+                }
+            }
+        }
+        return count;
     }
 
 
