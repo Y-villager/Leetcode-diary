@@ -1,8 +1,4 @@
-package code;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+package code.others;
 
 /**
  * 功能描述

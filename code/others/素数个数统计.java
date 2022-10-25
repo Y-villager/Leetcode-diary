@@ -1,4 +1,4 @@
-package code;
+package code.others;
 
 /**
  * 统计n以内的素数个数
@@ -44,7 +44,7 @@ public class 素数个数统计 {
         for (int i = 2; i < n; i++) {
             if (!isPrime[i]) {
                 count++;
-                for (int j = i * i; j < n; j += i) {
+                for (int j = i * i; j < i; j += i) {
                     isPrime[j] = true;
                 }
             }
